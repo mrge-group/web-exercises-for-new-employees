@@ -21,8 +21,5 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen ">
-            <h1>Hi! You can find your Tasks in the README.md</h1>
-        </div>
     </body>
 </html>

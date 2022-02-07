@@ -2,19 +2,17 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\FizzBuzz\FizzBuzz;
+use PHPUnit\Framework\TestCase;
 
-
+/**
+ * Class FizzBuzzTest
+ * @package Tests\Unit
+ * @group FizzBuzzTest
+ */
 class FizzBuzzTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+
     public function testGetSpecific()
     {
         $this->assertEquals(1, FizzBuzz::getSpecific(1));
