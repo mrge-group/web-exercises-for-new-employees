@@ -7,7 +7,6 @@
 /public/svg
 /storage/*.key
 /vendor
-.env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

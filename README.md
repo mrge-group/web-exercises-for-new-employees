@@ -11,23 +11,19 @@ $ git clone git@github.com:shopping24/web-exercises-for-new-employees.git
 ```
 
 ### Install dependencies
-The project is a laravel project. Install dependencies with composer and npm.
+The project is a laravel project. Install dependencies with composer.
 
 ```bash
 $ composer install
-$ npm i
 ```
 
-### Run Tests
-This project validates your work with unit tests for both PHP and JS.
-
-We created these handy npm scripts
+start the internal php server with
 
 ```bash
-$ npm run phpunit
-$ npm run mocha
+$ php artisan serve
 ```
 
+visit: http://127.0.0.1:8000
 
 ## Tasks
 
@@ -45,30 +41,55 @@ but each time a number is dividable
 - by 5 you say "Buzz"
 - by both 3 and 5, you say "FizzBuzz"
 
-Validate your the implementation with help of `Tests\Unit\FizzBuzzTest`.
+Validate your implementation with help of `Tests\Unit\FizzBuzzTest`.
 
-#### Extend Collection Class with a `countBy` method
-Implement a `countBy` method to Laravel's Collection Class
-via a macro in the `App\Providers\CollectionMacrosServiceProvider`.
+##### Run Tests
+To run the FizzBuzz tests
 
-Validate your implementation with help of `Tests\Unit\CollectionMacrosTest`.
-
-Useful resources:
-- https://laravel.com/docs/5.7/providers
-- https://laravel.com/docs/5.7/collections#extending-collections
-
-##### REST API
-To create a simple public REST API add a controller and its routes.  
-
-Useful resources:
-- https://laravel.com/docs/5.7/controllers
-- https://laravel.com/docs/5.7/routing
+```bash
+$ composer test -- --group FizzBuzzTest
+```
 
 
-### JS
+#### Simple Rest API (not only ;-))
 
-#### Implement a `getUserEmails` function
-When implemented correctly the js Unit Test `mailing.spec.js` should pass.
+Look at the routes/web.php, there are two defined routes. Both routes point to the
+`\App\Http\Controllers\User` Controller. Your goal is to implement both methods
+`getUsers` and `getUser`.
 
-#### Implement a `transpose` function
-When implemented correctly the JS Unit Test `arrayHelper.spec.js` should pass.
+Steps `getUsers`:
+1. Load the data from storage/app/users.json
+2. The method `getUsers` should return all users except the users with the role `admin`. 
+   The expected output should look like:
+   ```
+   [
+        ['id' => "2", 'name' => 'test_user1'],
+        ['id' => "3", 'name' => 'test_user2'],
+        ['id' => "5", 'name' => 'test_user3'],
+        ['id' => "6", 'name' => 'test_user4'],
+    ]
+   ```
+3. Output the data to the view `users.blade.php` in a table
+4. If the request header has `Accept: application/json` return the json instead of the view.
+
+Steps `getUser`:
+1. Load the data from storage/app/users.json 
+2. Find the user by the given UserId
+3. If the user is an admin, return an empty array.
+   example: http://127.0.0.1:8000/users/1
+   ```
+   []
+   ```
+   example: http://127.0.0.1:8000/users/2
+   ```
+   ['id' => "2", 'name' => 'test_user1'],
+   ```
+
+Validate your implementation with help of `Tests\Feature\UserTest`.
+
+##### Run Tests
+To run the User tests
+
+```bash
+$ composer test -- --group UserTests
+```
