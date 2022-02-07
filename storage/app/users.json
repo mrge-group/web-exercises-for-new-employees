@@ -1,0 +1,8 @@
+[
+    {"id": "1", "data": "rolle:admin|name:super_admin"},
+    {"id": "2", "data": "rolle:user|name:test_user1"},
+    {"id": "3", "data": "rolle:user|name:test_user2"},
+    {"id": "4", "data": "rolle:AdMin|name:super_admin1"},
+    {"id": "5", "data": "rolle:user|name:test_user3"},
+    {"id": "6", "data": "rolle:user|name:test_user4"}
+]
