@@ -41,7 +41,7 @@ but each time a number is dividable
 - by 5 you say "Buzz"
 - by both 3 and 5, you say "FizzBuzz"
 
-Validate your the implementation with help of `Tests\Unit\FizzBuzzTest`.
+Validate your implementation with help of `Tests\Unit\FizzBuzzTest`.
 
 ##### Run Tests
 To run the FizzBuzz tests
@@ -85,7 +85,7 @@ Steps `getUser`:
    ['id' => "2", 'name' => 'test_user1'],
    ```
 
-Validate your the implementation with help of `Tests\Feature\UserTest`.
+Validate your implementation with help of `Tests\Feature\UserTest`.
 
 ##### Run Tests
 To run the User tests
